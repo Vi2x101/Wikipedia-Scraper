@@ -17,3 +17,5 @@ Lastly, I wrote the main function that uses methods from Beautiful Soup to read 
 ### What Does The Output Look Like
 
 ---
+
+![Output](images/output_image.jpg)
