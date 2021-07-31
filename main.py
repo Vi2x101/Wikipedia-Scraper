@@ -163,7 +163,7 @@ def WikipediaScraper(URL):
                 if count == 25:
                     break
 
-            print('Word count for ' + section_name + ': ', top_25_word_count)
+            print('Top 25 word count for ' + section_name + ': ', top_25_word_count)
 
             # Print out links in section
             print('Links in ' + section_name + ': ', links_holder[section_name])
