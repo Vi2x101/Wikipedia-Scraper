@@ -117,6 +117,15 @@ def WikipediaScraper(URL):
                     links = para.find_all('a')
                     for link in links:
                         if link.has_attr('href'):
+
+                            # Replace en-dash so that link isn't broken
+                            if '–' in link['href']:
+                                link['href'] = link['href'].replace("–", '%E2%80%93')
+
+                            # Replace em-dash so that link isn't broken
+                            if '—' in link['href']:
+                                link['href'] = link['href'].replace("–", '%E2%80%94')
+
                             # Replace single apostrophe in link so that link isn't broken
                             if "'" in link['href']:
                                 link['href'] = link['href'].replace("'", '%27')
@@ -136,14 +145,25 @@ def WikipediaScraper(URL):
                             elif link['href'][:10] == '#cite_ref-' or link['href'][:11] == '#cite_note-':
                                 links_holder[section_name].append(URL + link['href'])
                             else:
-                                links_holder[section_name].append(link['href'])
+                                if 'https://' not in link['href']:
+                                    links_holder[section_name].append('https://' + link['href'])
+                                else:
+                                    links_holder[section_name].append(link['href'])
 
             # Combines all the text in section and does frequent word count
             combined = ''.join([content.text for content in wiki_holder[section_name]])
             section_word_count = count_words(combined)
 
-            # Print out word count in section
-            print('Word count for ' + section_name + ': ', section_word_count)
+            # Print out top 15 word count in section
+            count = 0
+            top_25_word_count = {}
+            for key, value in section_word_count.items():
+                top_25_word_count[key] = value
+                count += 1
+                if count == 25:
+                    break
+
+            print('Word count for ' + section_name + ': ', top_25_word_count)
 
             # Print out links in section
             print('Links in ' + section_name + ': ', links_holder[section_name])
@@ -163,8 +183,8 @@ Call the main function to test it out!
 # URL = 'https://en.wikipedia.org/wiki/Julianne_Moore'
 # URL = 'https://en.wikipedia.org/wiki/Federal_government_of_the_United_States'
 # URL = 'https://en.wikipedia.org/wiki/Roblox'
-# URL = 'https://en.wikipedia.org/wiki/Minecraft'
-URL = 'https://en.wikipedia.org/wiki/Poptropica'
+URL = 'https://en.wikipedia.org/wiki/Minecraft'
+# URL = 'https://en.wikipedia.org/wiki/Poptropica'
 
 
 # Call the function
