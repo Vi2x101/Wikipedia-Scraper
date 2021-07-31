@@ -29,7 +29,7 @@ This is an example output for what it looked like when I scrapped and printed th
 
 ---
 
-1. Within the links list, there are links that would've been broken if I had not URL encoded some punctuation marks like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code. This same issue may apply to word count - I had stripped the punctuation from the string but there may be some obsolete punctuation marks that I wasn't able to strip nor the library I used was able to strip.
+1. Within the links list, there are links that would've been broken if I had not URL encoded some punctuation marks like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code. This same issue may apply to word count - I had stripped the punctuation from the string but there may be some obsolete punctuation marks that I wasn't able to strip nor the library I used was able to catch.
 2. I included the text from citation text tables (like the one shown below) into the word count for the section it is located in. There was no class name to be used uniformly across all lack of citation notifications for different Wiki pages, so I thought it'd be best to include it.
 
 ![Output](images/needs_citation.png)
