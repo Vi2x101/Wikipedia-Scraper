@@ -17,7 +17,12 @@ Lastly, I wrote the main function that uses methods from Beautiful Soup to read 
 ### What Does The Output Look Like
 
 ---
-This is example output for what it looked like when I scrapped and printed the section, word frequency, and links for the Minecraft Wiki page.
+This is an example output for what it looked like when I scrapped and printed the section, word frequency, and links for the Minecraft Wiki page.
 
 
 ![Output](images/output_image.png)
+
+
+### Things To Note
+
+---
