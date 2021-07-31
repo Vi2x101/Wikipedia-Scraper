@@ -115,7 +115,6 @@ def WikipediaScraper(URL):
                 # Extract links in section including links for images
                 if para.find('a'):
                     links = para.find_all('a')
-                    # link = para.find('a')
                     for link in links:
                         if link.has_attr('href'):
                             # Replace single apostrophe in link so that link isn't broken
@@ -164,7 +163,8 @@ Call the main function to test it out!
 # URL = 'https://en.wikipedia.org/wiki/Julianne_Moore'
 # URL = 'https://en.wikipedia.org/wiki/Federal_government_of_the_United_States'
 # URL = 'https://en.wikipedia.org/wiki/Roblox'
-URL = 'https://en.wikipedia.org/wiki/Minecraft'
+# URL = 'https://en.wikipedia.org/wiki/Minecraft'
+URL = 'https://en.wikipedia.org/wiki/Poptropica'
 
 
 # Call the function
