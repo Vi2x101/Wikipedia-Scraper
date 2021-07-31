@@ -114,20 +114,30 @@ def WikipediaScraper(URL):
 
                 # Extract links in section including links for images
                 if para.find('a'):
-                    link = para.find('a')
+                    links = para.find_all('a')
+                    # link = para.find('a')
+                    for link in links:
+                        if link.has_attr('href'):
+                            # Replace single apostrophe in link so that link isn't broken
+                            if "'" in link['href']:
+                                link['href'] = link['href'].replace("'", '%27')
 
-                    # Replace parenthesis in link so that link isn't broken
-                    if ('(' in link['href']) and (')' in link['href']):
-                        link['href'] = link['href'].replace('(', '%28')
-                        link['href'] = link['href'].replace(')', '%29')
+                            # Replace double apostrophe in link so that link isn't broken
+                            if '"' in link['href']:
+                                link['href'] = link['href'].replace('"', '%22')
 
-                    # Add to partial links so link is accessible
-                    if (link['href'][:6] == '/wiki/') or (link['href'][:3] == '/w/'):
-                        links_holder[section_name].append('https://en.wikipedia.org' + link['href'])
-                    elif link['href'][:10] == '#cite_ref-' or link['href'][:11] == '#cite_note-':
-                        links_holder[section_name].append(URL + link['href'])
-                    else:
-                        links_holder[section_name].append(link['href'])
+                            # Replace parenthesis in link so that link isn't broken
+                            if ('(' in link['href']) and (')' in link['href']):
+                                link['href'] = link['href'].replace('(', '%28')
+                                link['href'] = link['href'].replace(')', '%29')
+
+                            # Add to partial links so link is accessible
+                            if (link['href'][:6] == '/wiki/') or (link['href'][:3] == '/w/'):
+                                links_holder[section_name].append('https://en.wikipedia.org' + link['href'])
+                            elif link['href'][:10] == '#cite_ref-' or link['href'][:11] == '#cite_note-':
+                                links_holder[section_name].append(URL + link['href'])
+                            else:
+                                links_holder[section_name].append(link['href'])
 
             # Combines all the text in section and does frequent word count
             combined = ''.join([content.text for content in wiki_holder[section_name]])
