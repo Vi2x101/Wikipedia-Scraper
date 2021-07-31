@@ -4,4 +4,6 @@ This repository contains a Python script that will take a Wikipedia page URL as 
 
 ### What I Did
 
+---
+
 To give some idea as to how this script works, I had first compiled a list of stopwords from various libraries and combined them into a singular list of 411 stop words. The libraries that I ended up using to get these stop words include NLTK, Spacy, and Stop_Words.
