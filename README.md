@@ -25,11 +25,14 @@ This is an example output for what it looked like when I scrapped and printed th
 ![Output](images/output_image.png)
 
 
-### Things To Note
+### Things To Note / Improvements That Could Be Made
 
 ---
 
-1. Within the links list, there are links that could've been broken unless I had URL encoded some punctuations like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code.
-2. I included the text from citation text tables (like the one shown below) into the word count for the section it is located in. There was no class name to be used uniformly across all lack of citation notifications for different Wiki pages
+1. Within the links list, there are links that would've been broken if I had not URL encoded some punctuation marks like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code. This same issue may apply to word count - I had stripped the punctuation from the string but there may be some obsolete punctuation marks that I wasn't able to strip nor the library I used was able to strip.
+2. I included the text from citation text tables (like the one shown below) into the word count for the section it is located in. There was no class name to be used uniformly across all lack of citation notifications for different Wiki pages, so I thought it'd be best to include it.
 
 ![Output](images/needs_citation.png)
+
+3. Images are included within the links list as well as any other links that may redirect the user to a different section of the same Wikipedia page. In addition, edit links and reference links were also included.
+4. I did not include anything outside of the constraints - anything that existed above the very first section listed in the Contents table of the Wiki page was not included. To elaborate, essentially the first chunk of the Wikipedia page that usually describes/defines the page's contents was not included as the Contents table did not list it as a section.
