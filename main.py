@@ -109,9 +109,8 @@ def WikipediaScraper(URL):
                     if headline['class'][0]:
                         break
 
-                # Will hold all content in section excluding citation warning box
-                if not (para.has_attr('class') and para['class'][0] == "box-Unreferenced_section"):
-                    wiki_holder[section_name].append(para)
+                # Will hold all content in section including citation warning box
+                wiki_holder[section_name].append(para)
 
                 # Extract links in section including links for images
                 if para.find('a'):
@@ -154,7 +153,8 @@ Call the main function to test it out!
 # URL = "https://en.wikipedia.org/wiki/United_States_Department_of_State"
 # URL = 'https://en.wikipedia.org/wiki/Julianne_Moore'
 # URL = 'https://en.wikipedia.org/wiki/Federal_government_of_the_United_States'
-URL = 'https://en.wikipedia.org/wiki/Roblox'
+# URL = 'https://en.wikipedia.org/wiki/Roblox'
+URL = 'https://en.wikipedia.org/wiki/Minecraft'
 
 
 # Call the function
