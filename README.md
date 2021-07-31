@@ -18,4 +18,4 @@ Lastly, I wrote the main function that uses methods from Beautiful Soup to read 
 
 ---
 
-![Output](images/output_image.jpg)
+![Output](images/output_image.png)
