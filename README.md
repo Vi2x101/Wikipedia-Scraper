@@ -28,3 +28,8 @@ This is an example output for what it looked like when I scrapped and printed th
 ### Things To Note
 
 ---
+
+1. Within the links list, there are links that could've been broken unless I had URL encoded some punctuations like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code.
+2. I included the text from citation text tables (like the one shown below) into the word count for the section it is located in. There was no class name to be used uniformly across all lack of citation notifications for different Wiki pages
+
+![Output](images/needs_citation.png)
