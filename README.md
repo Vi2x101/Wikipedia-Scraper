@@ -13,7 +13,7 @@ To give some idea as to how this script works, I had first compiled a list of st
 
 I wrote a helper function (called count_words) to take the text within a section and return the word count of all words within the section. The word count is returned as a dictionary that is sorted in descending order so that the most frequent words can be seen first.
 
-Lastly, I wrote the main function that uses methods from Beautiful Soup to read the contents of the Wiki page, print out the section names of the Wiki page (section names were typically under an h2 tag and a class called mw-headline), uses the helper function to print out the word frequency dictionary, and print out an array containing the links in each section.
+Lastly, I wrote the main function that uses methods from Beautiful Soup to read the contents of the Wiki page, print out the section names of the Wiki page (section names were typically under an h2 tag and a class called mw-headline), uses the helper function to print out the word frequency dictionary, and print out an array containing the links in each section. I only print out the top 25 most frequent words in each section with their count, but the code could be modified to print out the word count of all words in the section.
 
 
 ### What Does The Output Look Like
@@ -29,7 +29,7 @@ This is an example output for what it looked like when I scrapped and printed th
 
 ---
 
-1. Within the links list, there are links that would've been broken if I had not URL encoded some punctuation marks like apostrophes and brackets in the URL link. I had wrote conditions that covered apostrophes and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code. This same issue may apply to word count - I had stripped the punctuation from the string but there may be some obsolete punctuation marks that I wasn't able to strip nor the library I used was able to catch.
+1. Within the links list, there are links that would've been broken if I had not URL encoded some punctuation marks like apostrophes, en/em dashes, and brackets in the URL link. I had wrote conditions that covered apostrophes, en/em dashes, and parentheses, but there may be some that I haven't caught due to it not being in the Wikipedia pages I used to test my code. This same issue may apply to word count - I had stripped the punctuation from the string but there may be some obsolete punctuation marks that I wasn't able to strip nor the library I used was able to catch.
 2. I included the text from citation text tables (like the one shown below) into the word count for the section it is located in. There was no class name to be used uniformly across all lack of citation notifications for different Wiki pages, so I thought it'd be best to include it.
 
 ![Output](images/needs_citation.png)
