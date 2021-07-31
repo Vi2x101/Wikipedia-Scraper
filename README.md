@@ -36,3 +36,4 @@ This is an example output for what it looked like when I scrapped and printed th
 
 3. Images are included within the links list as well as any other links that may redirect the user to a different section of the same Wikipedia page. In addition, edit links and reference links were also included.
 4. I did not include anything outside of the constraints - anything that existed above the very first section listed in the Contents table of the Wiki page was not included. To elaborate, essentially the first chunk of the Wikipedia page that usually describes/defines the page's contents was not included as the Contents table did not list it as a section.
+5. Visibility wise - the print statement, especially if the links list is large, is pretty long and difficult to read so there could've been some reformatting done to make it more organized. Perhaps only printing some of the URLs in the section and not all.
