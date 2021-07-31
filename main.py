@@ -154,7 +154,7 @@ def WikipediaScraper(URL):
             combined = ''.join([content.text for content in wiki_holder[section_name]])
             section_word_count = count_words(combined)
 
-            # Print out top 15 word count in section
+            # Print out top 25 word count in section
             count = 0
             top_25_word_count = {}
             for key, value in section_word_count.items():
