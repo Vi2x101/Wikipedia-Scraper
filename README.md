@@ -11,4 +11,9 @@ To give some idea as to how this script works, I had first compiled a list of st
 
 I wrote a helper function (called count_words) to take the text within a section and return the word count of all words within the section. The word count is returned as a dictionary that is sorted in descending order so that the most frequent words can be seen first.
 
-Lastly, I wrote the main function that uses methods from Beautiful Soup to read the contents of the Wiki page, print out the section names of the Wiki page (section names were typically under an h2 tag and a class called mw-headline), used the helper function to print out the word frequency dictionary, and print out an array containing the links in each section.
+Lastly, I wrote the main function that uses methods from Beautiful Soup to read the contents of the Wiki page, print out the section names of the Wiki page (section names were typically under an h2 tag and a class called mw-headline), uses the helper function to print out the word frequency dictionary, and print out an array containing the links in each section.
+
+
+### What Does The Output Look Like
+
+---
