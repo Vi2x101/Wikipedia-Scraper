@@ -1,5 +1,7 @@
 # Wikipedia-Scraper
 
+Hello to the VSFS mentors who get the chance to see this repo! :D
+
 This repository contains a Python script that will take a Wikipedia page URL as input and print out the page's sections, the frequent words within each section (excluding stop words), and the links contained each section. To access this code, you can find it in main.py (scroll all the way to the bottom of main.py and you can designate a URL to see  and test out how the script functions).
 
 ![Test the Code](images/test_it_out.png)
